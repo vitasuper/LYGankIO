@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A39ABA391C915ADD00DEE9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA381C915ADD00DEE9BB /* AppDelegate.swift */; };
+		A39ABA3B1C915ADD00DEE9BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA3A1C915ADD00DEE9BB /* ViewController.swift */; };
+		A39ABA3E1C915ADD00DEE9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */; };
+		A39ABA401C915ADD00DEE9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */; };
+		A39ABA431C915ADD00DEE9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA411C915ADD00DEE9BB /* LaunchScreen.storyboard */; };
+		A39ABA4B1C915C3500DEE9BB /* GankIOCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */; };
+		E91DADF5B4E026062276EEF4 /* Pods_LYGankIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF9E87B1D6F94C9111695AF /* Pods_LYGankIO.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5FF9E87B1D6F94C9111695AF /* Pods_LYGankIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYGankIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E35895AAE264E655BE661BC /* Pods-LYGankIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYGankIO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO.debug.xcconfig"; sourceTree = "<group>"; };
+		A39ABA351C915ADD00DEE9BB /* LYGankIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYGankIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A39ABA381C915ADD00DEE9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A39ABA3A1C915ADD00DEE9BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A39ABA3D1C915ADD00DEE9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A39ABA421C915ADD00DEE9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A39ABA441C915ADD00DEE9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOCell.swift; sourceTree = "<group>"; };
+		BDC951B6D375FB52E04266B6 /* Pods-LYGankIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYGankIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A39ABA321C915ADD00DEE9BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E91DADF5B4E026062276EEF4 /* Pods_LYGankIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A39ABA2C1C915ADD00DEE9BB = {
+			isa = PBXGroup;
+			children = (
+				A39ABA371C915ADD00DEE9BB /* LYGankIO */,
+				A39ABA361C915ADD00DEE9BB /* Products */,
+				AF975781597E2A049C40274C /* Pods */,
+				B4E1DA0E1D654BD674A3F2E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A39ABA361C915ADD00DEE9BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A39ABA351C915ADD00DEE9BB /* LYGankIO.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A39ABA371C915ADD00DEE9BB /* LYGankIO */ = {
+			isa = PBXGroup;
+			children = (
+				A39ABA4C1C915C5100DEE9BB /* Cell */,
+				A39ABA381C915ADD00DEE9BB /* AppDelegate.swift */,
+				A39ABA3A1C915ADD00DEE9BB /* ViewController.swift */,
+				A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */,
+				A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */,
+				A39ABA411C915ADD00DEE9BB /* LaunchScreen.storyboard */,
+				A39ABA441C915ADD00DEE9BB /* Info.plist */,
+			);
+			path = LYGankIO;
+			sourceTree = "<group>";
+		};
+		A39ABA4C1C915C5100DEE9BB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		AF975781597E2A049C40274C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E35895AAE264E655BE661BC /* Pods-LYGankIO.debug.xcconfig */,
+				BDC951B6D375FB52E04266B6 /* Pods-LYGankIO.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B4E1DA0E1D654BD674A3F2E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9E87B1D6F94C9111695AF /* Pods_LYGankIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A39ABA341C915ADD00DEE9BB /* LYGankIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A39ABA471C915ADD00DEE9BB /* Build configuration list for PBXNativeTarget "LYGankIO" */;
+			buildPhases = (
+				572B6BD46A2CA5E2AA370034 /* Check Pods Manifest.lock */,
+				A39ABA311C915ADD00DEE9BB /* Sources */,
+				A39ABA321C915ADD00DEE9BB /* Frameworks */,
+				A39ABA331C915ADD00DEE9BB /* Resources */,
+				5EB7A99A1BDFDA83F1296E3D /* Embed Pods Frameworks */,
+				FD090D2887BC690C32F5405E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYGankIO;
+			productName = LYGankIO;
+			productReference = A39ABA351C915ADD00DEE9BB /* LYGankIO.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A39ABA2D1C915ADD00DEE9BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = vitasuper;
+				TargetAttributes = {
+					A39ABA341C915ADD00DEE9BB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = K3G687G5LX;
+					};
+				};
+			};
+			buildConfigurationList = A39ABA301C915ADD00DEE9BB /* Build configuration list for PBXProject "LYGankIO" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A39ABA2C1C915ADD00DEE9BB;
+			productRefGroup = A39ABA361C915ADD00DEE9BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A39ABA341C915ADD00DEE9BB /* LYGankIO */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A39ABA331C915ADD00DEE9BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A39ABA431C915ADD00DEE9BB /* LaunchScreen.storyboard in Resources */,
+				A39ABA401C915ADD00DEE9BB /* Assets.xcassets in Resources */,
+				A39ABA3E1C915ADD00DEE9BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		572B6BD46A2CA5E2AA370034 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5EB7A99A1BDFDA83F1296E3D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD090D2887BC690C32F5405E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A39ABA311C915ADD00DEE9BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A39ABA3B1C915ADD00DEE9BB /* ViewController.swift in Sources */,
+				A39ABA4B1C915C3500DEE9BB /* GankIOCell.swift in Sources */,
+				A39ABA391C915ADD00DEE9BB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A39ABA3D1C915ADD00DEE9BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A39ABA411C915ADD00DEE9BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A39ABA421C915ADD00DEE9BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A39ABA451C915ADD00DEE9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A39ABA461C915ADD00DEE9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A39ABA481C915ADD00DEE9BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E35895AAE264E655BE661BC /* Pods-LYGankIO.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LYGankIO/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vitasuper.LYGankIO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A39ABA491C915ADD00DEE9BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC951B6D375FB52E04266B6 /* Pods-LYGankIO.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LYGankIO/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vitasuper.LYGankIO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A39ABA301C915ADD00DEE9BB /* Build configuration list for PBXProject "LYGankIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A39ABA451C915ADD00DEE9BB /* Debug */,
+				A39ABA461C915ADD00DEE9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A39ABA471C915ADD00DEE9BB /* Build configuration list for PBXNativeTarget "LYGankIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A39ABA481C915ADD00DEE9BB /* Debug */,
+				A39ABA491C915ADD00DEE9BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A39ABA2D1C915ADD00DEE9BB /* Project object */;
+}
