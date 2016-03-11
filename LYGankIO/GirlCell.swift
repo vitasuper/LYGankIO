@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GankIOCell: UITableViewCell {
+class GirlCell: UITableViewCell {
 
     @IBOutlet weak var girlImageView: UIImageView!
     
@@ -17,6 +17,12 @@ class GankIOCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        girlImageView.layer.masksToBounds = true
+        girlImageView.layer.cornerRadius = 10
+        
+        GirlCell.appearance().backgroundColor = UIColor(red:1.00, green:0.90, blue:0.78, alpha:1.0)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,9 +31,15 @@ class GankIOCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // Load girl image in the cell
     func setGirlImage(girlItem: Girl) {
-        print(girlItem.url)
         girlImageView.kf_setImageWithURL(NSURL(string: girlItem.url)!, placeholderImage: nil)
     }
-
+    
+    // Set action for tapping the girl image
+    func setGirlImageAction(target: AnyObject, action: Selector) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+        girlImageView.userInteractionEnabled = true
+        girlImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
 }

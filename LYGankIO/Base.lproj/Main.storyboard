@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="now-Ts-212">
             <objects>
-                <navigationController id="Pwz-1b-ZZm" sceneMemberID="viewController">
+                <navigationController id="Pwz-1b-ZZm" customClass="NavigationController" customModule="LYGankIO" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwf-gv-6oR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,19 +34,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="317" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5D7-fG-4cw">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="317" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5D7-fG-4cw" userLabel="GirlTableView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.91723621359999996" blue="0.8220831931" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GankIOCell" rowHeight="317" id="PRg-lL-Wh6" customClass="GankIOCell" customModule="LYGankIO" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GirlCell" rowHeight="317" id="PRg-lL-Wh6" customClass="GirlCell" customModule="LYGankIO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="317"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PRg-lL-Wh6" id="Q8w-Tf-NER">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="316.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="317"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-L3-uPe">
-                                                    <rect key="frame" x="5" y="5" width="590" height="252"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQN-L3-uPe">
+                                                    <rect key="frame" x="20" y="20" width="560" height="238"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="142" id="i4o-NI-oaQ"/>
                                                     </constraints>
@@ -55,46 +57,58 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-1V-AbP">
-                                                    <rect key="frame" x="538" y="277" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-1V-AbP">
+                                                    <rect key="frame" x="219" y="261" width="361" height="48"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="pQN-L3-uPe" secondAttribute="trailing" constant="5" id="Atv-ON-Res"/>
+                                                <constraint firstAttribute="trailing" secondItem="pQN-L3-uPe" secondAttribute="trailing" constant="20" id="Atv-ON-Res"/>
                                                 <constraint firstAttribute="bottom" secondItem="6wy-1V-AbP" secondAttribute="bottom" constant="20" id="Dle-tB-QgP"/>
                                                 <constraint firstAttribute="trailing" secondItem="6wy-1V-AbP" secondAttribute="trailing" constant="20" id="VpB-WB-G5w"/>
-                                                <constraint firstItem="pQN-L3-uPe" firstAttribute="top" secondItem="Q8w-Tf-NER" secondAttribute="top" constant="5" id="gFh-8g-N0U"/>
+                                                <constraint firstItem="pQN-L3-uPe" firstAttribute="top" secondItem="Q8w-Tf-NER" secondAttribute="top" constant="20" id="gFh-8g-N0U"/>
                                                 <constraint firstItem="6wy-1V-AbP" firstAttribute="top" secondItem="pQN-L3-uPe" secondAttribute="bottom" constant="20" id="x6k-g6-Rt8"/>
-                                                <constraint firstItem="pQN-L3-uPe" firstAttribute="leading" secondItem="Q8w-Tf-NER" secondAttribute="leading" constant="5" id="zPp-Es-e8J"/>
+                                                <constraint firstItem="pQN-L3-uPe" firstAttribute="leading" secondItem="Q8w-Tf-NER" secondAttribute="leading" constant="20" id="zPp-Es-e8J"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="6wy-1V-AbP" id="JiW-Ii-brW"/>
-                                            <outlet property="girlImageView" destination="pQN-L3-uPe" id="AOA-WT-90b"/>
+                                            <outlet property="girlImageView" destination="pQN-L3-uPe" id="NoM-fJ-L3u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.91723621359999996" blue="0.8220831931" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5D7-fG-4cw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZHQ-D8-3gA"/>
+                            <constraint firstItem="5D7-fG-4cw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bNw-BO-uO1"/>
                             <constraint firstItem="5D7-fG-4cw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="blV-Bn-58p"/>
+                            <constraint firstItem="5D7-fG-4cw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h9g-8E-jK7"/>
+                            <constraint firstItem="5D7-fG-4cw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="iYT-HW-AK8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5D7-fG-4cw" secondAttribute="bottom" id="ne8-kl-tdQ"/>
+                            <constraint firstItem="5D7-fG-4cw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t2i-9W-nlT"/>
                             <constraint firstAttribute="trailing" secondItem="5D7-fG-4cw" secondAttribute="trailing" id="v1U-dM-dtK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bNw-BO-uO1"/>
+                                <exclude reference="blV-Bn-58p"/>
+                                <exclude reference="iYT-HW-AK8"/>
+                                <exclude reference="t2i-9W-nlT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="LYGankIO" id="3hL-Hs-qit"/>
                     <connections>
-                        <outlet property="GankIOTableView" destination="5D7-fG-4cw" id="52f-Jf-s4v"/>
+                        <outlet property="GirlTableView" destination="5D7-fG-4cw" id="Yrm-zu-N6z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="385"/>
+            <point key="canvasLocation" x="781" y="386"/>
         </scene>
     </scenes>
 </document>

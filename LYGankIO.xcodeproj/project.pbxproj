@@ -12,7 +12,10 @@
 		A39ABA3E1C915ADD00DEE9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */; };
 		A39ABA401C915ADD00DEE9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */; };
 		A39ABA431C915ADD00DEE9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39ABA411C915ADD00DEE9BB /* LaunchScreen.storyboard */; };
-		A39ABA4B1C915C3500DEE9BB /* GankIOCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */; };
+		A39ABA4B1C915C3500DEE9BB /* GirlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA4A1C915C3500DEE9BB /* GirlCell.swift */; };
+		A39ABA4E1C91B22000DEE9BB /* GankIOModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA4D1C91B22000DEE9BB /* GankIOModels.swift */; };
+		A39ABA511C91C07F00DEE9BB /* GankIOHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA501C91C07F00DEE9BB /* GankIOHttpClient.swift */; };
+		A39ABA531C9203D100DEE9BB /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA521C9203D100DEE9BB /* NavigationController.swift */; };
 		E91DADF5B4E026062276EEF4 /* Pods_LYGankIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF9E87B1D6F94C9111695AF /* Pods_LYGankIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +29,10 @@
 		A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A39ABA421C915ADD00DEE9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A39ABA441C915ADD00DEE9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOCell.swift; sourceTree = "<group>"; };
+		A39ABA4A1C915C3500DEE9BB /* GirlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GirlCell.swift; sourceTree = "<group>"; };
+		A39ABA4D1C91B22000DEE9BB /* GankIOModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOModels.swift; sourceTree = "<group>"; };
+		A39ABA501C91C07F00DEE9BB /* GankIOHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOHttpClient.swift; sourceTree = "<group>"; };
+		A39ABA521C9203D100DEE9BB /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		BDC951B6D375FB52E04266B6 /* Pods-LYGankIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYGankIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +69,10 @@
 		A39ABA371C915ADD00DEE9BB /* LYGankIO */ = {
 			isa = PBXGroup;
 			children = (
-				A39ABA4C1C915C5100DEE9BB /* Cell */,
+				A39ABA4F1C91C03600DEE9BB /* Models */,
+				A39ABA4C1C915C5100DEE9BB /* Cells */,
 				A39ABA381C915ADD00DEE9BB /* AppDelegate.swift */,
+				A39ABA521C9203D100DEE9BB /* NavigationController.swift */,
 				A39ABA3A1C915ADD00DEE9BB /* ViewController.swift */,
 				A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */,
 				A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */,
@@ -74,12 +82,21 @@
 			path = LYGankIO;
 			sourceTree = "<group>";
 		};
-		A39ABA4C1C915C5100DEE9BB /* Cell */ = {
+		A39ABA4C1C915C5100DEE9BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A39ABA4A1C915C3500DEE9BB /* GankIOCell.swift */,
+				A39ABA4A1C915C3500DEE9BB /* GirlCell.swift */,
 			);
-			name = Cell;
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		A39ABA4F1C91C03600DEE9BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A39ABA4D1C91B22000DEE9BB /* GankIOModels.swift */,
+				A39ABA501C91C07F00DEE9BB /* GankIOHttpClient.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		AF975781597E2A049C40274C /* Pods */ = {
@@ -223,7 +240,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A39ABA3B1C915ADD00DEE9BB /* ViewController.swift in Sources */,
-				A39ABA4B1C915C3500DEE9BB /* GankIOCell.swift in Sources */,
+				A39ABA531C9203D100DEE9BB /* NavigationController.swift in Sources */,
+				A39ABA4B1C915C3500DEE9BB /* GirlCell.swift in Sources */,
+				A39ABA4E1C91B22000DEE9BB /* GankIOModels.swift in Sources */,
+				A39ABA511C91C07F00DEE9BB /* GankIOHttpClient.swift in Sources */,
 				A39ABA391C915ADD00DEE9BB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
