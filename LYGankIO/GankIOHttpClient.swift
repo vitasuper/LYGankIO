@@ -29,8 +29,8 @@ class GankIOHttpClient {
     
     private init() {}
     
-    func catchGirlImagesData() {
-        let imageUrl = ("http://gank.io/api/data/福利/20/1").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+    func catchGirlImagesData(pageNo: Int) {
+        let imageUrl = ("http://gank.io/api/data/福利/10/\(pageNo)").stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         Alamofire.request(.GET, imageUrl).validate().responseJSON { response in
             switch response.result {

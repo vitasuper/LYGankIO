@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LYGankIO.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>49A5728E90AFEFF43DAF6831F46D2A03</key>
+		<key>6847254D016329D4A531D34ED2B6DF81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E863B13D074278A30CAC32C0E48F18CC</key>
+		<key>B3CF985807F570F891B7DAC742AECC7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C447F025B1C2A0C392728A14678C75E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

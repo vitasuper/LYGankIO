@@ -10,17 +10,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import MJRefresh
 
 class ViewController: UIViewController, GirlImagesDataDelegate {
     
     @IBOutlet weak var GirlTableView: UITableView!
     
-    var content: JSON = []
-    
     var girlImagesData: [Girl] = []
-    
-    var historyURL = String()
-    
+    var pageNo: Int = 1
+    var loadMoreFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +31,13 @@ class ViewController: UIViewController, GirlImagesDataDelegate {
         
         GirlTableView.backgroundColor? = UIColor(red:1.00, green:0.90, blue:0.78, alpha:1.0)
         GankIOHttpClient.sharedInstance.girlImagesDataDelegate = self  // Set self as girlImagesDataDelegate
-
         
-        GankIOHttpClient.sharedInstance.catchGirlImagesData()
+        // Settings of the MJRefresh
+        GirlTableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: "headerRefresh")
+        GirlTableView.mj_footer = MJRefreshAutoNormalFooter(refreshingTarget: self, refreshingAction: "footerRefresh")
+        
+        // Start catching the GankIO girl images
+        GankIOHttpClient.sharedInstance.catchGirlImagesData(1)
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -47,13 +49,53 @@ class ViewController: UIViewController, GirlImagesDataDelegate {
     }
     
     func girlImagesDataDidReceive(girlJson: JSON) {
-        let result = girlJson["results"].arrayValue
-        for item in result {
-            let girl = Girl(girlJson: item)
-            girlImagesData.append(girl)
+        if loadMoreFlag {
+            let result = girlJson["results"].arrayValue
+            if result.count < 10 {
+                GirlTableView.mj_footer.endRefreshingWithNoMoreData()
+                pageNo -= 1
+            }
+            for item in result {
+                let girl = Girl(girlJson: item)
+                girlImagesData.append(girl)
+            }
+            GirlTableView.mj_footer.endRefreshing()
+        } else {
+            let result = girlJson["results"].arrayValue
+            for item in result {
+                let girl = Girl(girlJson: item)
+                girlImagesData.append(girl)
+            }
+            GirlTableView.mj_header.endRefreshing()
         }
+
         GirlTableView.reloadData()
     }
+    
+    func headerRefresh() {
+        delay(2) { () -> () in
+            self.girlImagesData.removeAll(keepCapacity: false)
+            self.pageNo = 1
+            self.loadMoreFlag = false
+            GankIOHttpClient.sharedInstance.catchGirlImagesData(self.pageNo)
+        }
+    }
+    
+    func footerRefresh() {
+        delay(2) { () -> () in
+            self.pageNo += 1
+            self.loadMoreFlag = true
+            GankIOHttpClient.sharedInstance.catchGirlImagesData(self.pageNo)
+        }
+    }
+    
+    
+    // Delay method
+    func delay(time:Double,closure:() -> ()){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
+    }
+    
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -71,25 +113,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         // Some settings of the cell, such as properties, methods for events and so on
         let cell = tableView.dequeueReusableCellWithIdentifier("GirlCell", forIndexPath: indexPath) as! GirlCell
+        
         cell.setGirlImage(girlItem)
         cell.setGirlImageAction(self, action: Selector("girlImageTapped:"))
+        cell.setWatchGankAction(self, action: Selector("watchGankLabelTapped:"))
+        
         
         let index = girlItem.publishedAt.startIndex.advancedBy(10)
         cell.dateLabel.text = girlItem.publishedAt.substringToIndex(index)
-        
-//        let post = data[indexPath.row]
-//        cell.postImageView.image = UIImage(named: post.image)
-//
-//        
-//        cell.avatarImageView.image = UIImage(named: post.avatar)
-//        
-//        cell.usernameLabel.text = post.username
-//        
-//        cell.nicknameLabel.text = post.nickname
-//        
-//        cell.contentLabel.text = post.content
-//        
-//        cell.timeLabel.text = post.created_at
+        cell.whoLabel.text = "供图者：" + girlItem.who
         
         return cell
         
@@ -113,8 +145,27 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         print("hahaha")
     }
 
+    func watchGankLabelTapped(sender: UITapGestureRecognizer) {
+        print("gank!!")
+    }
+    
 
-
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let cell = tableView.cellForRowAtIndexPath(indexPath)
+//        
+//        normalText = cell?.textLabel?.text
+//        
+//        performSegueWithIdentifier("showNormalViewController", sender: nil)
+//    }
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showNormalViewController" {
+//            let viewController = segue.destinationViewController as! NormalViewController
+//            
+//            viewController.normalText = normalText
+//        }
+//    }
+//
 
 
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A98F3F359CF5B7FB39A1EF17'
+               BlueprintIdentifier = '844AA6D04694E6A488B33CC4'
                BlueprintName = 'Pods-LYGankIO'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_LYGankIO.framework'>

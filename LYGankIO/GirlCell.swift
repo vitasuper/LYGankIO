@@ -11,8 +11,9 @@ import UIKit
 class GirlCell: UITableViewCell {
 
     @IBOutlet weak var girlImageView: UIImageView!
-    
+    @IBOutlet weak var whoLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var watchGankLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,4 +43,13 @@ class GirlCell: UITableViewCell {
         girlImageView.userInteractionEnabled = true
         girlImageView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
+    // Set action for tapping the watchGankLabel
+    func setWatchGankAction(target: AnyObject, action: Selector) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
+        watchGankLabel.userInteractionEnabled = true
+        watchGankLabel.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
 }

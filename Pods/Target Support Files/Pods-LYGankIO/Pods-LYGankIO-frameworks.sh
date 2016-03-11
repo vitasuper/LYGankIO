@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-LYGankIO/Alamofire.framework"
   install_framework "Pods-LYGankIO/Kingfisher.framework"
+  install_framework "Pods-LYGankIO/MJRefresh.framework"
   install_framework "Pods-LYGankIO/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-LYGankIO/Alamofire.framework"
   install_framework "Pods-LYGankIO/Kingfisher.framework"
+  install_framework "Pods-LYGankIO/MJRefresh.framework"
   install_framework "Pods-LYGankIO/SwiftyJSON.framework"
 fi
