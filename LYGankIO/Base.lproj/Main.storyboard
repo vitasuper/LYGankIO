@@ -15,12 +15,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oMH-Ra-HXB"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="u9S-re-atr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lK0-pW-Wef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="341"/>
+            <point key="canvasLocation" x="-441" y="-298"/>
         </scene>
         <!--LYGankIO-->
         <scene sceneID="tne-QT-ifu">
@@ -138,11 +138,45 @@
                     <navigationItem key="navigationItem" title="LYGankIO" id="3hL-Hs-qit"/>
                     <connections>
                         <outlet property="GirlTableView" destination="5D7-fG-4cw" id="Yrm-zu-N6z"/>
+                        <segue destination="ejd-le-bB5" kind="show" identifier="showGirlViewController" id="Os5-HG-3fu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="386"/>
+            <point key="canvasLocation" x="521" y="49"/>
+        </scene>
+        <!--Girl View Controller-->
+        <scene sceneID="D1k-PW-cTh">
+            <objects>
+                <viewController id="ejd-le-bB5" customClass="GirlViewController" customModule="LYGankIO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uyp-1B-aWz"/>
+                        <viewControllerLayoutGuide type="bottom" id="IKz-HP-Xds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fCo-NY-lkV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSv-uT-CMD">
+                                <rect key="frame" x="30" y="94" width="540" height="476"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.91723621359999996" blue="0.8220831931" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZSv-uT-CMD" firstAttribute="top" secondItem="uyp-1B-aWz" secondAttribute="bottom" constant="30" id="DG0-em-j3k"/>
+                            <constraint firstItem="ZSv-uT-CMD" firstAttribute="leading" secondItem="fCo-NY-lkV" secondAttribute="leading" constant="30" id="Xv9-aL-5BS"/>
+                            <constraint firstAttribute="trailing" secondItem="ZSv-uT-CMD" secondAttribute="trailing" constant="30" id="mrs-We-D0g"/>
+                            <constraint firstItem="IKz-HP-Xds" firstAttribute="top" secondItem="ZSv-uT-CMD" secondAttribute="bottom" constant="30" id="oJR-n3-iH6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="girlImageView" destination="ZSv-uT-CMD" id="ROw-eC-tIh"/>
+                        <outlet property="girlView" destination="fCo-NY-lkV" id="ytE-fx-KQj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpf-BS-Qlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="49"/>
         </scene>
     </scenes>
 </document>

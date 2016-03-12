@@ -38,9 +38,10 @@ class GirlCell: UITableViewCell {
     }
     
     // Set action for tapping the girl image
-    func setGirlImageAction(target: AnyObject, action: Selector) {
+    func setGirlImageAction(indexPath: NSIndexPath, target: AnyObject, action: Selector) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
         girlImageView.userInteractionEnabled = true
+        girlImageView.tag = indexPath.row
         girlImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     

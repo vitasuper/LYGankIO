@@ -1,30 +1,37 @@
 //
-//  NavigationController.swift
+//  GirlViewController.swift
 //  LYGankIO
 //
-//  Created by 韩龙粤 on 16/3/11.
+//  Created by 韩龙粤 on 16/3/12.
 //  Copyright © 2016年 vitasuper. All rights reserved.
 //
 
 import UIKit
 
-class NavigationController: UINavigationController {
+class GirlViewController: UIViewController {
 
+    @IBOutlet var girlView: UIView!
+    @IBOutlet weak var girlImageView: UIImageView!
+    var girlImageUrl: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationBar.barTintColor = UIColor(red:0.84, green:0.64, blue:0.48, alpha:1.0)
-        self.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : UIColor(red:1.0, green:0.96, blue:0.95, alpha:1.0),
-                                                NSFontAttributeName: UIFont(name: "Avenir", size: 20)!]
-        self.navigationBar.tintColor = UIColor(red:1.0, green:0.96, blue:0.95, alpha:1.0)
         // Do any additional setup after loading the view.
+        title = "妹子图"
+        
+        // Set the background color of the view
+        girlView.backgroundColor? = UIColor(red:1.00, green:0.90, blue:0.78, alpha:1.0)
+        
+        // Settings of the girl imageview
+        girlImageView.kf_setImageWithURL(NSURL(string: girlImageUrl)!, placeholderImage: nil)
+        girlImageView.layer.masksToBounds = true
+        girlImageView.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

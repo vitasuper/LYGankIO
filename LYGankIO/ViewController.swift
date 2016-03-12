@@ -17,6 +17,7 @@ class ViewController: UIViewController, GirlImagesDataDelegate {
     @IBOutlet weak var GirlTableView: UITableView!
     
     var girlImagesData: [Girl] = []
+    var girlImageUrl: String = ""
     var pageNo: Int = 1
     var loadMoreFlag: Bool = false
     
@@ -73,20 +74,20 @@ class ViewController: UIViewController, GirlImagesDataDelegate {
     }
     
     func headerRefresh() {
-        delay(2) { () -> () in
+//        delay(2) { () -> () in
             self.girlImagesData.removeAll(keepCapacity: false)
             self.pageNo = 1
             self.loadMoreFlag = false
             GankIOHttpClient.sharedInstance.catchGirlImagesData(self.pageNo)
-        }
+//        }
     }
     
     func footerRefresh() {
-        delay(2) { () -> () in
+//        delay(2) { () -> () in
             self.pageNo += 1
             self.loadMoreFlag = true
             GankIOHttpClient.sharedInstance.catchGirlImagesData(self.pageNo)
-        }
+//        }
     }
     
     
@@ -115,7 +116,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("GirlCell", forIndexPath: indexPath) as! GirlCell
         
         cell.setGirlImage(girlItem)
-        cell.setGirlImageAction(self, action: Selector("girlImageTapped:"))
+        cell.setGirlImageAction(indexPath, target: self, action: Selector("girlImageTapped:"))
         cell.setWatchGankAction(self, action: Selector("watchGankLabelTapped:"))
         
         
@@ -131,22 +132,38 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return girlImagesData.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let cell = tableView.cellForRowAtIndexPath(indexPath)
-//        
-//        normalText = cell?.textLabel?.text
-//        
-//        performSegueWithIdentifier("", sender: nil)
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+////        let cell = tableView.cellForRowAtIndexPath(indexPath)
+////        
+////        normalText = cell?.textLabel?.text
+////        
+////        performSegueWithIdentifier("", sender: nil)
+//    }
     
     // Action for tapping the girl image
     func girlImageTapped(sender: UITapGestureRecognizer) {
         // Your action
         print("hahaha")
+        let girlImageView = sender.view as! UIImageView
+        girlImageUrl = girlImagesData[girlImageView.tag].url
+        performSegueWithIdentifier("showGirlViewController", sender: nil)
     }
 
     func watchGankLabelTapped(sender: UITapGestureRecognizer) {
         print("gank!!")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showGirlViewController" {
+            let girlViewController = segue.destinationViewController as! GirlViewController
+            girlViewController.girlImageUrl = girlImageUrl
+            
+            
+            // Hide the word of the back button of the navigation bar
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+        }
     }
     
 
