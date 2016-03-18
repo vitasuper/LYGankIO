@@ -20,6 +20,7 @@ class ViewController: UIViewController, GirlImagesDataDelegate {
     var girlImageUrl: String = ""
     var pageNo: Int = 1
     var loadMoreFlag: Bool = false
+    var selectedDate: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +118,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.setGirlImage(girlItem)
         cell.setGirlImageAction(indexPath, target: self, action: Selector("girlImageTapped:"))
-        cell.setWatchGankAction(self, action: Selector("watchGankLabelTapped:"))
         
         
         let index = girlItem.publishedAt.startIndex.advancedBy(10)
@@ -128,41 +128,42 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    // Return the number of the table view cell
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return girlImagesData.count
     }
-    
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-////        let cell = tableView.cellForRowAtIndexPath(indexPath)
-////        
-////        normalText = cell?.textLabel?.text
-////        
-////        performSegueWithIdentifier("", sender: nil)
-//    }
+
     
     // Action for tapping the girl image
     func girlImageTapped(sender: UITapGestureRecognizer) {
         // Your action
-        print("hahaha")
         let girlImageView = sender.view as! UIImageView
         girlImageUrl = girlImagesData[girlImageView.tag].url
         performSegueWithIdentifier("showGirlViewController", sender: nil)
     }
-
-    func watchGankLabelTapped(sender: UITapGestureRecognizer) {
-        print("gank!!")
+    
+    // Action for tapping the cell to view the daily gank
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let index = girlImagesData[indexPath.row].publishedAt.startIndex.advancedBy(10)
+        selectedDate = girlImagesData[indexPath.row].publishedAt.substringToIndex(index).stringByReplacingOccurrencesOfString("-", withString: "/", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        // print(selectedDate)
+        performSegueWithIdentifier("showDailyGankController", sender: nil)
     }
     
+
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Hide the word of the back button of the navigation bar
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
         if segue.identifier == "showGirlViewController" {
             let girlViewController = segue.destinationViewController as! GirlViewController
             girlViewController.girlImageUrl = girlImageUrl
-            
-            
-            // Hide the word of the back button of the navigation bar
-            let backItem = UIBarButtonItem()
-            backItem.title = ""
-            navigationItem.backBarButtonItem = backItem
+        } else if segue.identifier == "showDailyGankController" {
+            let dailyGankViewController = segue.destinationViewController as! DailyGankViewController
+            dailyGankViewController.selectedDate = selectedDate
         }
     }
     

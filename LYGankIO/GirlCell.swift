@@ -45,12 +45,4 @@ class GirlCell: UITableViewCell {
         girlImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    // Set action for tapping the watchGankLabel
-    func setWatchGankAction(target: AnyObject, action: Selector) {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: target, action: action)
-        watchGankLabel.userInteractionEnabled = true
-        watchGankLabel.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    
 }

@@ -17,6 +17,8 @@
 		A39ABA511C91C07F00DEE9BB /* GankIOHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA501C91C07F00DEE9BB /* GankIOHttpClient.swift */; };
 		A39ABA531C9203D100DEE9BB /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA521C9203D100DEE9BB /* NavigationController.swift */; };
 		A39ABA551C932BFA00DEE9BB /* GirlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA541C932BFA00DEE9BB /* GirlViewController.swift */; };
+		A39ABA6E1C9B06C800DEE9BB /* DailyGankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA6D1C9B06C800DEE9BB /* DailyGankViewController.swift */; };
+		A39ABA701C9B38F600DEE9BB /* DailyGankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ABA6F1C9B38F600DEE9BB /* DailyGankCell.swift */; };
 		E91DADF5B4E026062276EEF4 /* Pods_LYGankIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF9E87B1D6F94C9111695AF /* Pods_LYGankIO.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		A39ABA501C91C07F00DEE9BB /* GankIOHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOHttpClient.swift; sourceTree = "<group>"; };
 		A39ABA521C9203D100DEE9BB /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A39ABA541C932BFA00DEE9BB /* GirlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GirlViewController.swift; sourceTree = "<group>"; };
+		A39ABA6D1C9B06C800DEE9BB /* DailyGankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGankViewController.swift; sourceTree = "<group>"; };
+		A39ABA6F1C9B38F600DEE9BB /* DailyGankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyGankCell.swift; sourceTree = "<group>"; };
 		BDC951B6D375FB52E04266B6 /* Pods-LYGankIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYGankIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYGankIO/Pods-LYGankIO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +80,7 @@
 				A39ABA381C915ADD00DEE9BB /* AppDelegate.swift */,
 				A39ABA3A1C915ADD00DEE9BB /* ViewController.swift */,
 				A39ABA541C932BFA00DEE9BB /* GirlViewController.swift */,
+				A39ABA6D1C9B06C800DEE9BB /* DailyGankViewController.swift */,
 				A39ABA521C9203D100DEE9BB /* NavigationController.swift */,
 				A39ABA3C1C915ADD00DEE9BB /* Main.storyboard */,
 				A39ABA3F1C915ADD00DEE9BB /* Assets.xcassets */,
@@ -89,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				A39ABA4A1C915C3500DEE9BB /* GirlCell.swift */,
+				A39ABA6F1C9B38F600DEE9BB /* DailyGankCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -245,10 +251,12 @@
 				A39ABA3B1C915ADD00DEE9BB /* ViewController.swift in Sources */,
 				A39ABA531C9203D100DEE9BB /* NavigationController.swift in Sources */,
 				A39ABA4B1C915C3500DEE9BB /* GirlCell.swift in Sources */,
+				A39ABA6E1C9B06C800DEE9BB /* DailyGankViewController.swift in Sources */,
 				A39ABA4E1C91B22000DEE9BB /* GankIOModels.swift in Sources */,
 				A39ABA551C932BFA00DEE9BB /* GirlViewController.swift in Sources */,
 				A39ABA511C91C07F00DEE9BB /* GankIOHttpClient.swift in Sources */,
 				A39ABA391C915ADD00DEE9BB /* AppDelegate.swift in Sources */,
+				A39ABA701C9B38F600DEE9BB /* DailyGankCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

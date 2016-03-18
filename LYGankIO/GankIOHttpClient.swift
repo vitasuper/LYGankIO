@@ -46,7 +46,22 @@ class GankIOHttpClient {
         
     }
     
-    
+    func catchDailyGankData(date: String) {
+        let gankUrl = ("http://gank.io/api/day/" + date).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        // print(gankUrl)
+        
+        Alamofire.request(.GET, gankUrl).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                if let value = response.result.value {
+                    let dailyGankJson = JSON(value)
+                    self.dailyGankDataDelegate?.DailyGankDataDidReceive(dailyGankJson)
+                }
+            case .Failure(let error):
+                print(error)
+            }
+        }
+    }
     
     
     
